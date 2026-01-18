@@ -1,3 +1,7 @@
+from faker import Faker
+
+fake = Faker('pl_PL')
+
 class BaseContact():
     def __init__(self, first_name, last_name, private_phone, email):
         self.first_name = first_name
