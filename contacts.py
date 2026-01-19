@@ -28,3 +28,20 @@ class BussinessContact(BaseContact):
 
     def contact(self):
         print(f'Wybieram numer {self.work_phone} i dzwonię do {self.first_name} {self.last_name}')
+
+def create_contacts(ilosc, rodzaj="base"):
+    cards = []
+    for i in range(ilosc):
+        if rodzaj == "base":
+            card = BaseContact(fake.first_name(), fake.last_name(), fake.phone_number(), fake.email())
+        elif rodzaj == "bussiness":
+            card = BussinessContact(fake.first_name(), fake.last_name(), fake.phone_number(), fake.email(), fake.job(), fake.company(), fake.phone_number())
+        cards.append(card)
+    return cards
+
+result = create_contacts(2, "bussiness")
+
+for y in result:
+    print(y)
+    y.contact()
+    print(f"Number of chars: {y.length_data}\n")
