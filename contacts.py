@@ -43,9 +43,10 @@ def create_contacts(quantity, rodzaj="base"):
         cards.append(card)
     return cards
 
-result = create_contacts(2, "base")
+if __name__ == "__main__":
+    result = create_contacts(2, "base")
 
-for y in result:
-    print(y)
-    y.contact()
-    print(f"Number of chars: {y.length_data}\n")
+    for y in result:
+        print(y)
+        y.contact()
+        print(f"Number of chars: {y.length_data}\n")
