@@ -33,9 +33,9 @@ class BussinessContact(BaseContact):
     def contact(self):
         print(f'Wybieram numer {self.work_phone} i dzwonię do {self.first_name} {self.last_name}')
 
-def create_contacts(ilosc, rodzaj="base"):
+def create_contacts(quantity, rodzaj="base"):
     cards = []
-    for i in range(ilosc):
+    for i in range(quantity):
         if rodzaj == "base":
             card = BaseContact(fake.first_name(), fake.last_name(), fake.phone_number(), fake.email())
         elif rodzaj == "bussiness":
