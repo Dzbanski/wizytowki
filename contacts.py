@@ -15,6 +15,10 @@ class BaseContact():
     def __str__(self):
          return f'{self.first_name} {self.last_name} | {self.email}'
     
+    @property
+    def length_data(self):
+        return len(self.first_name+self.last_name)
+    
 
 class BussinessContact(BaseContact):
     def __init__(self, first_name, last_name, private_phone, email, job, company, work_phone):
